@@ -4,7 +4,7 @@
 <style>
 .field-container {
   float: left;
-  width: 100px;
+  width: 100%;
   height: 35px;
   margin: 1px;
   padding: 1px;
@@ -13,11 +13,12 @@
 
 .field-container-hover {
   float: left;
-  width: 100px;
-  height: 35px;
-  margin: 1px;
-  padding: 1px;
+  width: 80%;
+  height: 100%;
+  margin: 0% 10%;
+  padding: 0px;
   border: 1px solid green;
+
 }
 
 .fieldItem {
@@ -126,7 +127,10 @@ function postRender(){
 
   if (gridItems.length > 1) {
     for (i in gridItems){
+      gridItems[i].ondragover = gridItemOver;
       gridItems[i].onmouseover = gridItemOver;
+
+      gridItems[i].ondragleave = gridItemOut;
       gridItems[i].onmouseout = gridItemOut;
     }
   }
