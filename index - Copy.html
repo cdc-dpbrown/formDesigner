@@ -6,44 +6,47 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  /*
-  background-color: orangered;
-  */
+  background-color: lightgray;
   padding: 0px;
-  border: 0px;
+  border: 2px;
 }
 
 .grid-item {
-  background-color: none;
+  background-color: lightgray;
   border: 1px solid white;
   padding: 0px;
   font-size: 8px;
   text-align: center;
-  height: 35px !important;
-  transition: 0.4s;
+  max-height: 35px;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
 .field-container {
   float: left;
-  width: calc(100% - 2px);
-  height: 33px !important;
-  margin: 0px;
-  padding: 0px;
-  border: 1px solid black;
+  width: 100%;
+  height: 35px;
+  margin: 1px;
+  padding: 1px;
+  border: 1px solid gray;
+  transition: 0.3s;
   pointer-events: none;
-  transition: 0.4s;
 }
 
 .field-container-hover {
   float: left;
   width: 80%;
-  height: 33px !important;
+  /*
+  height: 80%;
+  min-height: 80%; 
+  margin: 10% 10%;
+  */
   margin: 0% 10%;
   padding: 0px;
-  border: 1px solid black;
+  border: 1px solid green;
+  transition: 0.3s;
   pointer-events: none;
-  transition: 0.4s;
-  }
+}
 
 .fieldItem {
   width: 100%;
@@ -53,6 +56,14 @@
   background-color: orange;
 }
 
+
+/*
+.grid-item:hover {
+  opacity: 1;
+  margin: 0px 10%;
+
+}
+*/
 
 </style>
 <script>
@@ -122,10 +133,10 @@ function postRender(){
 
   if (gridItems.length > 1) {
     for (i in gridItems){
-      gridItems[i].ondragover = gridItemOver;
+//      gridItems[i].ondragover = gridItemOver;
       gridItems[i].onmouseover = gridItemOver;
 
-      gridItems[i].ondragleave = gridItemOut;
+  //    gridItems[i].ondragleave = gridItemOut;
       gridItems[i].onmouseout = gridItemOut;
     }
   }
@@ -141,7 +152,7 @@ function postRender(){
     <div class="grid-container">
         <div class="grid-item">
             <div class="field-container" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <!--div class="fieldItem" draggable="true" ondragstart="drag(event)" id="drag1">First Name</div-->
+                <div class="fieldItem" draggable="true" ondragstart="drag(event)" id="drag1">First Name</div>
                 <!-- <img src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31"> -->
             </div>
         </div>
@@ -152,10 +163,7 @@ function postRender(){
           <div class="field-container"></div>
         </div>
         <div class="grid-item">
-          <div class="field-container"></div>
-        </div>
-        <div class="grid-item">
-          <div class="field-container"></div>
+          <div class="field-container">dpbrown</div>
         </div>
         <div class="grid-item">
           <div class="field-container"></div>
